@@ -4,6 +4,7 @@ import joblib
 
 raw = pd.read_csv('../post_PCA.csv')
 scaler = joblib.load('../Models/scaler.joblib')
+raw = raw[raw['REPUR_FLG'] == True]
 X = raw.iloc[:, :-2].values.astype('float32')
 # X = scaler.transform(raw.iloc[:, :-2].values)
 # X = scaler.transform(raw.drop(['Y1_repurchase', 'REPUR_FLG'], axis=1))
@@ -11,4 +12,4 @@ X = raw.iloc[:, :-2].values.astype('float32')
 d = X.shape[1]# 設定向量的維度
 index = faiss.IndexFlatL2(d)
 index.add(X)# 將資料加入索引
-faiss.write_index(index, '../Models/faiss_vb_origin.index') # 保存索引
+faiss.write_index(index, '../Models/faiss_vb_repur.index') # 保存索引
