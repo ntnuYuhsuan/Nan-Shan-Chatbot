@@ -23,6 +23,7 @@ Modelfile跟TAIDE量化模型taide-8b-a.3-q4_k_m.gguf放在同一個路徑底下
 ## Start
 
 放置檔案路徑
+[link](https://drive.google.com/drive/folders/1O0hD32MNuYnyON4CVo6fdVhNjv-Wb_4G?usp=drive_link)
 ```
 raw = pd.read_csv('../post_PCA.csv')
 repur_list = pd.read_csv('../repur_list.csv')
